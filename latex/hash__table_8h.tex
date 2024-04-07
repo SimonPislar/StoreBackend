@@ -1,0 +1,358 @@
+\hypertarget{hash__table_8h}{}\doxysection{hash\+\_\+table.\+h File Reference}
+\label{hash__table_8h}\index{hash\_table.h@{hash\_table.h}}
+
+
+Simple hash table that maps integer keys to string values.  
+
+
+{\ttfamily \#include \char`\"{}linked\+\_\+list.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}common.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+Include dependency graph for hash\+\_\+table.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{hash__table_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{hash__table_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{hash__table_8h_af8a82080b75d55e9d276e35e9f1e01fe}\label{hash__table_8h_af8a82080b75d55e9d276e35e9f1e01fe}} 
+typedef struct \mbox{\hyperlink{structhash__table}{hash\+\_\+table}} {\bfseries ioopm\+\_\+hash\+\_\+table\+\_\+t}
+\item 
+\mbox{\Hypertarget{hash__table_8h_a167a7ea47fbb39b436dc877f1a2a91b1}\label{hash__table_8h_a167a7ea47fbb39b436dc877f1a2a91b1}} 
+typedef struct \mbox{\hyperlink{structentry}{entry}} {\bfseries entry\+\_\+t}
+\item 
+\mbox{\Hypertarget{hash__table_8h_a57d22209d004bba06cb5aed37795d0d1}\label{hash__table_8h_a57d22209d004bba06cb5aed37795d0d1}} 
+typedef struct \mbox{\hyperlink{structoption}{option}} {\bfseries option\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structhash__table}{ioopm\+\_\+hash\+\_\+table\+\_\+t}} $\ast$ \mbox{\hyperlink{hash__table_8h_a8dfa5e0f5b53e909d95d70c5be656fa6}{ioopm\+\_\+hash\+\_\+table\+\_\+create}} (ioopm\+\_\+hash\+\_\+function hash\+\_\+func, ioopm\+\_\+compare\+\_\+func eq\+\_\+values, ioopm\+\_\+compare\+\_\+func eq\+\_\+keys)
+\begin{DoxyCompactList}\small\item\em Create a new hash table. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hash__table_8h_abdad244dcf35551b8b421b2631931a15}{ioopm\+\_\+hash\+\_\+table\+\_\+destroy}} (\mbox{\hyperlink{structhash__table}{ioopm\+\_\+hash\+\_\+table\+\_\+t}} $\ast$ht)
+\begin{DoxyCompactList}\small\item\em Delete a hash table and free its memory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hash__table_8h_a37b9bafbded83c4f4f7f7897605d73f5}{ioopm\+\_\+hash\+\_\+table\+\_\+insert}} (\mbox{\hyperlink{structhash__table}{ioopm\+\_\+hash\+\_\+table\+\_\+t}} $\ast$ht, \mbox{\hyperlink{unionelem}{elem\+\_\+t}} key, \mbox{\hyperlink{unionelem}{elem\+\_\+t}} value)
+\begin{DoxyCompactList}\small\item\em add key =$>$ value entry in hash table ht \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structoption}{option\+\_\+t}} \mbox{\hyperlink{hash__table_8h_a56a02a10112923f281b025251eecee6c}{ioopm\+\_\+hash\+\_\+table\+\_\+lookup}} (\mbox{\hyperlink{structhash__table}{ioopm\+\_\+hash\+\_\+table\+\_\+t}} $\ast$ht, \mbox{\hyperlink{unionelem}{elem\+\_\+t}} key)
+\begin{DoxyCompactList}\small\item\em lookup value for key in hash table ht \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structoption}{option\+\_\+t}} \mbox{\hyperlink{hash__table_8h_afdc82722987eb5d42edbd99c86385db8}{ioopm\+\_\+hash\+\_\+table\+\_\+remove}} (\mbox{\hyperlink{structhash__table}{ioopm\+\_\+hash\+\_\+table\+\_\+t}} $\ast$ht, \mbox{\hyperlink{unionelem}{elem\+\_\+t}} key)
+\begin{DoxyCompactList}\small\item\em remove any mapping from key to a value \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{hash__table_8h_a73c82562b6cba8bfdca7ae3790b2d521}{ioopm\+\_\+hash\+\_\+table\+\_\+size}} (\mbox{\hyperlink{structhash__table}{ioopm\+\_\+hash\+\_\+table\+\_\+t}} $\ast$ht)
+\begin{DoxyCompactList}\small\item\em returns the number of key =$>$ value entries in the hash table \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{hash__table_8h_ab452851b3c5ea5807084a03faafd0dcf}{ioopm\+\_\+hash\+\_\+table\+\_\+is\+\_\+empty}} (\mbox{\hyperlink{structhash__table}{ioopm\+\_\+hash\+\_\+table\+\_\+t}} $\ast$ht)
+\begin{DoxyCompactList}\small\item\em checks if the hash table is empty \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hash__table_8h_a420a7fdf501f10bcea380f397a654368}{ioopm\+\_\+hash\+\_\+table\+\_\+clear}} (\mbox{\hyperlink{structhash__table}{ioopm\+\_\+hash\+\_\+table\+\_\+t}} $\ast$ht)
+\begin{DoxyCompactList}\small\item\em clear all the entries in a hash table \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structlist}{ioopm\+\_\+list\+\_\+t}} $\ast$ \mbox{\hyperlink{hash__table_8h_a02ee8776ea366fbecc6a55d916eb55f2}{ioopm\+\_\+hash\+\_\+table\+\_\+keys}} (\mbox{\hyperlink{structhash__table}{ioopm\+\_\+hash\+\_\+table\+\_\+t}} $\ast$ht)
+\begin{DoxyCompactList}\small\item\em return the keys for all entries in a hash map (in no particular order, but same as ioopm\+\_\+hash\+\_\+table\+\_\+values) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structlist}{ioopm\+\_\+list\+\_\+t}} $\ast$ \mbox{\hyperlink{hash__table_8h_a19c456a5fae440cd530e7bbf9f43f49c}{ioopm\+\_\+hash\+\_\+table\+\_\+values}} (\mbox{\hyperlink{structhash__table}{ioopm\+\_\+hash\+\_\+table\+\_\+t}} $\ast$ht)
+\begin{DoxyCompactList}\small\item\em return the values for all entries in a hash map (in no particular order, but same as ioopm\+\_\+hash\+\_\+table\+\_\+keys) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{hash__table_8h_a297fa700f1947432b9817cf8ba5183c3}{ioopm\+\_\+hash\+\_\+table\+\_\+has\+\_\+key}} (\mbox{\hyperlink{structhash__table}{ioopm\+\_\+hash\+\_\+table\+\_\+t}} $\ast$ht, \mbox{\hyperlink{unionelem}{elem\+\_\+t}} key)
+\begin{DoxyCompactList}\small\item\em check if a hash table has an entry with a given key \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{hash__table_8h_ae852ae7ad13e3123e25cce337f920f67}{ioopm\+\_\+hash\+\_\+table\+\_\+has\+\_\+value}} (\mbox{\hyperlink{structhash__table}{ioopm\+\_\+hash\+\_\+table\+\_\+t}} $\ast$ht, \mbox{\hyperlink{unionelem}{elem\+\_\+t}} value)
+\begin{DoxyCompactList}\small\item\em check if a hash table has an entry with a given value \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{hash__table_8h_a139d299d1f37365bce5195e2f04a3ba0}{ioopm\+\_\+hash\+\_\+table\+\_\+all}} (\mbox{\hyperlink{structhash__table}{ioopm\+\_\+hash\+\_\+table\+\_\+t}} $\ast$ht, ioopm\+\_\+predicate pred, void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em check if a predicate is satisfied by all entries in a hash table \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{hash__table_8h_a15eab978d1a95d5f635e3ac19abdac70}{ioopm\+\_\+hash\+\_\+table\+\_\+any}} (\mbox{\hyperlink{structhash__table}{ioopm\+\_\+hash\+\_\+table\+\_\+t}} $\ast$ht, ioopm\+\_\+predicate pred, void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em check if a predicate is satisfied by any entry in a hash table \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hash__table_8h_ad35a15be0c1acdf292b280f061a6bcc5}{ioopm\+\_\+hash\+\_\+table\+\_\+apply\+\_\+to\+\_\+all}} (\mbox{\hyperlink{structhash__table}{ioopm\+\_\+hash\+\_\+table\+\_\+t}} $\ast$ht, ioopm\+\_\+apply\+\_\+function apply\+\_\+fun, void $\ast$arg)
+\begin{DoxyCompactList}\small\item\em apply a function to all entries in a hash table \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Simple hash table that maps integer keys to string values. 
+
+\begin{DoxyAuthor}{Author}
+Linus Hellström, Noah Wassberg 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+1 Sep 2022 Here typically goes a more extensive explanation of what the header defines. Doxygens tags are words preceeded by either a backslash \textbackslash{} or by an at symbol @.
+\end{DoxyDate}
+We chose to use option\+\_\+t as our fail management option, since it seemed convenient to save two values into and object that we simply can extract, and call Failure() if it fails.
+
+The hash table does not take ownership of its keys and values.
+
+\begin{DoxySeeAlso}{See also}
+\href{https://uppsala.instructure.com/courses/68435/assignments/130155}{\texttt{ https\+://uppsala.\+instructure.\+com/courses/68435/assignments/130155}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{hash__table_8h_a139d299d1f37365bce5195e2f04a3ba0}\label{hash__table_8h_a139d299d1f37365bce5195e2f04a3ba0}} 
+\index{hash\_table.h@{hash\_table.h}!ioopm\_hash\_table\_all@{ioopm\_hash\_table\_all}}
+\index{ioopm\_hash\_table\_all@{ioopm\_hash\_table\_all}!hash\_table.h@{hash\_table.h}}
+\doxysubsubsection{\texorpdfstring{ioopm\_hash\_table\_all()}{ioopm\_hash\_table\_all()}}
+{\footnotesize\ttfamily bool ioopm\+\_\+hash\+\_\+table\+\_\+all (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structhash__table}{ioopm\+\_\+hash\+\_\+table\+\_\+t}} $\ast$}]{ht,  }\item[{ioopm\+\_\+predicate}]{pred,  }\item[{void $\ast$}]{arg }\end{DoxyParamCaption})}
+
+
+
+check if a predicate is satisfied by all entries in a hash table 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & hash table operated upon \\
+\hline
+{\em pred} & the predicate \\
+\hline
+{\em arg} & extra argument to pred \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hash__table_8h_a15eab978d1a95d5f635e3ac19abdac70}\label{hash__table_8h_a15eab978d1a95d5f635e3ac19abdac70}} 
+\index{hash\_table.h@{hash\_table.h}!ioopm\_hash\_table\_any@{ioopm\_hash\_table\_any}}
+\index{ioopm\_hash\_table\_any@{ioopm\_hash\_table\_any}!hash\_table.h@{hash\_table.h}}
+\doxysubsubsection{\texorpdfstring{ioopm\_hash\_table\_any()}{ioopm\_hash\_table\_any()}}
+{\footnotesize\ttfamily bool ioopm\+\_\+hash\+\_\+table\+\_\+any (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structhash__table}{ioopm\+\_\+hash\+\_\+table\+\_\+t}} $\ast$}]{ht,  }\item[{ioopm\+\_\+predicate}]{pred,  }\item[{void $\ast$}]{arg }\end{DoxyParamCaption})}
+
+
+
+check if a predicate is satisfied by any entry in a hash table 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & hash table operated upon \\
+\hline
+{\em pred} & the predicate \\
+\hline
+{\em arg} & extra argument to pred \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hash__table_8h_ad35a15be0c1acdf292b280f061a6bcc5}\label{hash__table_8h_ad35a15be0c1acdf292b280f061a6bcc5}} 
+\index{hash\_table.h@{hash\_table.h}!ioopm\_hash\_table\_apply\_to\_all@{ioopm\_hash\_table\_apply\_to\_all}}
+\index{ioopm\_hash\_table\_apply\_to\_all@{ioopm\_hash\_table\_apply\_to\_all}!hash\_table.h@{hash\_table.h}}
+\doxysubsubsection{\texorpdfstring{ioopm\_hash\_table\_apply\_to\_all()}{ioopm\_hash\_table\_apply\_to\_all()}}
+{\footnotesize\ttfamily void ioopm\+\_\+hash\+\_\+table\+\_\+apply\+\_\+to\+\_\+all (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structhash__table}{ioopm\+\_\+hash\+\_\+table\+\_\+t}} $\ast$}]{ht,  }\item[{ioopm\+\_\+apply\+\_\+function}]{apply\+\_\+fun,  }\item[{void $\ast$}]{arg }\end{DoxyParamCaption})}
+
+
+
+apply a function to all entries in a hash table 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & hash table operated upon \\
+\hline
+{\em apply\+\_\+fun} & the function to be applied to all elements \\
+\hline
+{\em arg} & extra argument to apply\+\_\+fun \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hash__table_8h_a420a7fdf501f10bcea380f397a654368}\label{hash__table_8h_a420a7fdf501f10bcea380f397a654368}} 
+\index{hash\_table.h@{hash\_table.h}!ioopm\_hash\_table\_clear@{ioopm\_hash\_table\_clear}}
+\index{ioopm\_hash\_table\_clear@{ioopm\_hash\_table\_clear}!hash\_table.h@{hash\_table.h}}
+\doxysubsubsection{\texorpdfstring{ioopm\_hash\_table\_clear()}{ioopm\_hash\_table\_clear()}}
+{\footnotesize\ttfamily void ioopm\+\_\+hash\+\_\+table\+\_\+clear (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structhash__table}{ioopm\+\_\+hash\+\_\+table\+\_\+t}} $\ast$}]{ht }\end{DoxyParamCaption})}
+
+
+
+clear all the entries in a hash table 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & hash table operated upon \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hash__table_8h_a8dfa5e0f5b53e909d95d70c5be656fa6}\label{hash__table_8h_a8dfa5e0f5b53e909d95d70c5be656fa6}} 
+\index{hash\_table.h@{hash\_table.h}!ioopm\_hash\_table\_create@{ioopm\_hash\_table\_create}}
+\index{ioopm\_hash\_table\_create@{ioopm\_hash\_table\_create}!hash\_table.h@{hash\_table.h}}
+\doxysubsubsection{\texorpdfstring{ioopm\_hash\_table\_create()}{ioopm\_hash\_table\_create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structhash__table}{ioopm\+\_\+hash\+\_\+table\+\_\+t}}$\ast$ ioopm\+\_\+hash\+\_\+table\+\_\+create (\begin{DoxyParamCaption}\item[{ioopm\+\_\+hash\+\_\+function}]{hash\+\_\+func,  }\item[{ioopm\+\_\+compare\+\_\+func}]{eq\+\_\+values,  }\item[{ioopm\+\_\+compare\+\_\+func}]{eq\+\_\+keys }\end{DoxyParamCaption})}
+
+
+
+Create a new hash table. 
+
+\begin{DoxyReturn}{Returns}
+A new empty hash table 
+\end{DoxyReturn}
+Allocate space for a ioopm\+\_\+hash\+\_\+table\+\_\+t = 17 pointers to entry\+\_\+t\textquotesingle{}s, which will be set to N\+U\+LL\mbox{\Hypertarget{hash__table_8h_abdad244dcf35551b8b421b2631931a15}\label{hash__table_8h_abdad244dcf35551b8b421b2631931a15}} 
+\index{hash\_table.h@{hash\_table.h}!ioopm\_hash\_table\_destroy@{ioopm\_hash\_table\_destroy}}
+\index{ioopm\_hash\_table\_destroy@{ioopm\_hash\_table\_destroy}!hash\_table.h@{hash\_table.h}}
+\doxysubsubsection{\texorpdfstring{ioopm\_hash\_table\_destroy()}{ioopm\_hash\_table\_destroy()}}
+{\footnotesize\ttfamily void ioopm\+\_\+hash\+\_\+table\+\_\+destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structhash__table}{ioopm\+\_\+hash\+\_\+table\+\_\+t}} $\ast$}]{ht }\end{DoxyParamCaption})}
+
+
+
+Delete a hash table and free its memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ht} & a hash table to be deleted \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hash__table_8h_a297fa700f1947432b9817cf8ba5183c3}\label{hash__table_8h_a297fa700f1947432b9817cf8ba5183c3}} 
+\index{hash\_table.h@{hash\_table.h}!ioopm\_hash\_table\_has\_key@{ioopm\_hash\_table\_has\_key}}
+\index{ioopm\_hash\_table\_has\_key@{ioopm\_hash\_table\_has\_key}!hash\_table.h@{hash\_table.h}}
+\doxysubsubsection{\texorpdfstring{ioopm\_hash\_table\_has\_key()}{ioopm\_hash\_table\_has\_key()}}
+{\footnotesize\ttfamily bool ioopm\+\_\+hash\+\_\+table\+\_\+has\+\_\+key (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structhash__table}{ioopm\+\_\+hash\+\_\+table\+\_\+t}} $\ast$}]{ht,  }\item[{\mbox{\hyperlink{unionelem}{elem\+\_\+t}}}]{key }\end{DoxyParamCaption})}
+
+
+
+check if a hash table has an entry with a given key 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & hash table operated upon \\
+\hline
+{\em key} & the key sought \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hash__table_8h_ae852ae7ad13e3123e25cce337f920f67}\label{hash__table_8h_ae852ae7ad13e3123e25cce337f920f67}} 
+\index{hash\_table.h@{hash\_table.h}!ioopm\_hash\_table\_has\_value@{ioopm\_hash\_table\_has\_value}}
+\index{ioopm\_hash\_table\_has\_value@{ioopm\_hash\_table\_has\_value}!hash\_table.h@{hash\_table.h}}
+\doxysubsubsection{\texorpdfstring{ioopm\_hash\_table\_has\_value()}{ioopm\_hash\_table\_has\_value()}}
+{\footnotesize\ttfamily bool ioopm\+\_\+hash\+\_\+table\+\_\+has\+\_\+value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structhash__table}{ioopm\+\_\+hash\+\_\+table\+\_\+t}} $\ast$}]{ht,  }\item[{\mbox{\hyperlink{unionelem}{elem\+\_\+t}}}]{value }\end{DoxyParamCaption})}
+
+
+
+check if a hash table has an entry with a given value 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & hash table operated upon \\
+\hline
+{\em value} & the value sought \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{hash__table_8h_a37b9bafbded83c4f4f7f7897605d73f5}\label{hash__table_8h_a37b9bafbded83c4f4f7f7897605d73f5}} 
+\index{hash\_table.h@{hash\_table.h}!ioopm\_hash\_table\_insert@{ioopm\_hash\_table\_insert}}
+\index{ioopm\_hash\_table\_insert@{ioopm\_hash\_table\_insert}!hash\_table.h@{hash\_table.h}}
+\doxysubsubsection{\texorpdfstring{ioopm\_hash\_table\_insert()}{ioopm\_hash\_table\_insert()}}
+{\footnotesize\ttfamily void ioopm\+\_\+hash\+\_\+table\+\_\+insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structhash__table}{ioopm\+\_\+hash\+\_\+table\+\_\+t}} $\ast$}]{ht,  }\item[{\mbox{\hyperlink{unionelem}{elem\+\_\+t}}}]{key,  }\item[{\mbox{\hyperlink{unionelem}{elem\+\_\+t}}}]{value }\end{DoxyParamCaption})}
+
+
+
+add key =$>$ value entry in hash table ht 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ht} & hash table operated upon \\
+\hline
+{\em key} & key to insert \\
+\hline
+{\em value} & value to insert \\
+\hline
+\end{DoxyParams}
+Check if the next entry should be updated or not\mbox{\Hypertarget{hash__table_8h_ab452851b3c5ea5807084a03faafd0dcf}\label{hash__table_8h_ab452851b3c5ea5807084a03faafd0dcf}} 
+\index{hash\_table.h@{hash\_table.h}!ioopm\_hash\_table\_is\_empty@{ioopm\_hash\_table\_is\_empty}}
+\index{ioopm\_hash\_table\_is\_empty@{ioopm\_hash\_table\_is\_empty}!hash\_table.h@{hash\_table.h}}
+\doxysubsubsection{\texorpdfstring{ioopm\_hash\_table\_is\_empty()}{ioopm\_hash\_table\_is\_empty()}}
+{\footnotesize\ttfamily bool ioopm\+\_\+hash\+\_\+table\+\_\+is\+\_\+empty (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structhash__table}{ioopm\+\_\+hash\+\_\+table\+\_\+t}} $\ast$}]{ht }\end{DoxyParamCaption})}
+
+
+
+checks if the hash table is empty 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & hash table operated upon \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true is size == 0, else false 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hash__table_8h_a02ee8776ea366fbecc6a55d916eb55f2}\label{hash__table_8h_a02ee8776ea366fbecc6a55d916eb55f2}} 
+\index{hash\_table.h@{hash\_table.h}!ioopm\_hash\_table\_keys@{ioopm\_hash\_table\_keys}}
+\index{ioopm\_hash\_table\_keys@{ioopm\_hash\_table\_keys}!hash\_table.h@{hash\_table.h}}
+\doxysubsubsection{\texorpdfstring{ioopm\_hash\_table\_keys()}{ioopm\_hash\_table\_keys()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structlist}{ioopm\+\_\+list\+\_\+t}}$\ast$ ioopm\+\_\+hash\+\_\+table\+\_\+keys (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structhash__table}{ioopm\+\_\+hash\+\_\+table\+\_\+t}} $\ast$}]{ht }\end{DoxyParamCaption})}
+
+
+
+return the keys for all entries in a hash map (in no particular order, but same as ioopm\+\_\+hash\+\_\+table\+\_\+values) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & hash table operated upon \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a linked list of keys for hash table h 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hash__table_8h_a56a02a10112923f281b025251eecee6c}\label{hash__table_8h_a56a02a10112923f281b025251eecee6c}} 
+\index{hash\_table.h@{hash\_table.h}!ioopm\_hash\_table\_lookup@{ioopm\_hash\_table\_lookup}}
+\index{ioopm\_hash\_table\_lookup@{ioopm\_hash\_table\_lookup}!hash\_table.h@{hash\_table.h}}
+\doxysubsubsection{\texorpdfstring{ioopm\_hash\_table\_lookup()}{ioopm\_hash\_table\_lookup()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structoption}{option\+\_\+t}} ioopm\+\_\+hash\+\_\+table\+\_\+lookup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structhash__table}{ioopm\+\_\+hash\+\_\+table\+\_\+t}} $\ast$}]{ht,  }\item[{\mbox{\hyperlink{unionelem}{elem\+\_\+t}}}]{key }\end{DoxyParamCaption})}
+
+
+
+lookup value for key in hash table ht 
+
+We are using option 1 for this function. 
+\begin{DoxyParams}{Parameters}
+{\em ht} & hash table operated upon \\
+\hline
+{\em key} & key to lookup \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An object with indication of success of the lookup and a key, either N\+U\+LL or the key we looked for 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hash__table_8h_afdc82722987eb5d42edbd99c86385db8}\label{hash__table_8h_afdc82722987eb5d42edbd99c86385db8}} 
+\index{hash\_table.h@{hash\_table.h}!ioopm\_hash\_table\_remove@{ioopm\_hash\_table\_remove}}
+\index{ioopm\_hash\_table\_remove@{ioopm\_hash\_table\_remove}!hash\_table.h@{hash\_table.h}}
+\doxysubsubsection{\texorpdfstring{ioopm\_hash\_table\_remove()}{ioopm\_hash\_table\_remove()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structoption}{option\+\_\+t}} ioopm\+\_\+hash\+\_\+table\+\_\+remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structhash__table}{ioopm\+\_\+hash\+\_\+table\+\_\+t}} $\ast$}]{ht,  }\item[{\mbox{\hyperlink{unionelem}{elem\+\_\+t}}}]{key }\end{DoxyParamCaption})}
+
+
+
+remove any mapping from key to a value 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ht} & hash table operated upon \\
+\hline
+{\em key} & key to remove \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An object with indication of success of the removal and a key, either N\+U\+LL or the key we removed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hash__table_8h_a73c82562b6cba8bfdca7ae3790b2d521}\label{hash__table_8h_a73c82562b6cba8bfdca7ae3790b2d521}} 
+\index{hash\_table.h@{hash\_table.h}!ioopm\_hash\_table\_size@{ioopm\_hash\_table\_size}}
+\index{ioopm\_hash\_table\_size@{ioopm\_hash\_table\_size}!hash\_table.h@{hash\_table.h}}
+\doxysubsubsection{\texorpdfstring{ioopm\_hash\_table\_size()}{ioopm\_hash\_table\_size()}}
+{\footnotesize\ttfamily size\+\_\+t ioopm\+\_\+hash\+\_\+table\+\_\+size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structhash__table}{ioopm\+\_\+hash\+\_\+table\+\_\+t}} $\ast$}]{ht }\end{DoxyParamCaption})}
+
+
+
+returns the number of key =$>$ value entries in the hash table 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & hash table operated upon \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of key =$>$ value entries in the hash table 
+\end{DoxyReturn}
+\mbox{\Hypertarget{hash__table_8h_a19c456a5fae440cd530e7bbf9f43f49c}\label{hash__table_8h_a19c456a5fae440cd530e7bbf9f43f49c}} 
+\index{hash\_table.h@{hash\_table.h}!ioopm\_hash\_table\_values@{ioopm\_hash\_table\_values}}
+\index{ioopm\_hash\_table\_values@{ioopm\_hash\_table\_values}!hash\_table.h@{hash\_table.h}}
+\doxysubsubsection{\texorpdfstring{ioopm\_hash\_table\_values()}{ioopm\_hash\_table\_values()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structlist}{ioopm\+\_\+list\+\_\+t}}$\ast$ ioopm\+\_\+hash\+\_\+table\+\_\+values (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structhash__table}{ioopm\+\_\+hash\+\_\+table\+\_\+t}} $\ast$}]{ht }\end{DoxyParamCaption})}
+
+
+
+return the values for all entries in a hash map (in no particular order, but same as ioopm\+\_\+hash\+\_\+table\+\_\+keys) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & hash table operated upon \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a linked list of values for hash table h 
+\end{DoxyReturn}
