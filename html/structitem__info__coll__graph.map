@@ -1,7 +1,0 @@
-<map id="item_info" name="item_info">
-<area shape="rect" id="node1" title=" " alt="" coords="21,303,105,329"/>
-<area shape="rect" id="node2" href="$structitem.html" title=" " alt="" coords="5,199,57,225"/>
-<area shape="rect" id="node3" href="$structlist.html" title=" " alt="" coords="82,199,125,225"/>
-<area shape="rect" id="node4" href="$structlink.html" title=" " alt="" coords="136,95,183,121"/>
-<area shape="rect" id="node5" href="$unionelem.html" title=" " alt="" coords="64,5,119,32"/>
-</map>
